@@ -9,7 +9,8 @@ class LeapYearCalculatorTest {
 
   @Test
   void testLeapYear() {
-    assertTrue(LeapYearCalculator.isLeapYear(1600));  // 1600 is a leap year
+    final LeapYearCalculator leapYearCalculator = new LeapYearCalculator();
+    assertTrue(leapYearCalculator.isLeapYear(1600));  // 1600 is a leap year
     assertTrue(LeapYearCalculator.isLeapYear(2000));  // 2000 is a leap year
   }
 
