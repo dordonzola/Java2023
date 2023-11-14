@@ -16,14 +16,22 @@ public class Board {
     if (organisms[x][y] == null) {
       organisms[x][y] = organism;
       organism.setPosition(new Position(x, y));
+      //organism.setBoard(this);
     } else {
       System.out.println("Position already occupied!");
     }
   }
 
+//  public void eatOrganism(Organism otherOrganism){
+//    this.energy+=otherOrganism.getEnergy();
+//    otherOrganism.setEnergy(0);
+//  }
   public void moveOrganism(Organism organism, int newX, int newY) {
-    // TODO implement that one organism eats the other
-    if (newX >= 0 && newX < width && newY >= 0 && newY < height && organisms[newX][newY] == null) {
+    if (newX >= 0 && newX < width && newY >= 0 && newY < height) {
+      if (organisms[newX][newY] != null){
+        // One organism eats the other
+        organism.eat(organisms[newX][newY]);
+      }
       organisms[organism.getPosition().getX()][organism.getPosition().getY()] = null;
       organisms[newX][newY] = organism;
       organism.setPosition(new Position(newX, newY));
@@ -31,4 +39,8 @@ public class Board {
       System.out.println("Invalid move!");
     }
   }
+  public boolean isValidPosition(int newX, int newY){
+    return newX >= 0 && newX < width && newY >= 0 && newY < height;
+  }
+
 }

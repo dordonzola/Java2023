@@ -2,22 +2,25 @@ package org.life;
 
 import java.util.Random;
 
-public class Organism {
+public abstract class Organism {
 
   private int energy;
   private Position position;
   private Random random = new Random();
+  private Board board;
 
-  public Organism(int energy) {
+  public Organism(int energy, Board board)
+  {
     this.energy = energy;
+    this.board = board;
   }
 
   public void move() {
-    int newX = position.getX();
+    int newX = position.getX(); //to jest dotychczasowa pozycja
     int newY = position.getY();
 
     // Decide whether to move vertically or horizontally
-    boolean moveVertically = random.nextBoolean();
+    boolean moveVertically = random.nextBoolean(); //losowanie - prawda/fałsz
 
     if (moveVertically) {
       // Move up or down by 1
@@ -27,7 +30,12 @@ public class Organism {
       newX += random.nextBoolean() ? 1 : -1;
     }
 
-    // TODO: Use the board's moveOrganism method to move the organism
+    if (board.isValidPosition(newX, newY)) {
+      // Use the board's moveOrganism method to move the organism
+      board.moveOrganism(this, newX, newY);
+      //setPosition(newX, newY);
+    }
+
   }
 
   public void setPosition(Position position) {
@@ -37,5 +45,17 @@ public class Organism {
   public Position getPosition() {
     return position;
   }
+  public int getEnergy() {
+    return energy;
+  }
+  public void setEnergy() {
+    this.energy = energy;
+  }
+  public void eat(Organism other){
+    this.energy+=other.getEnergy();
+    other.energy=0;
+  }
 }
+
+
 
