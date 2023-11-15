@@ -1,4 +1,4 @@
-package org.studentresource;
+package org.studentresource.decorator;
 
 import org.studentresource.StudentResource;
 
