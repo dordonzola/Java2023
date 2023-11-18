@@ -1,6 +1,6 @@
 package org.studentresource;
 
-public class Course implements StudentResource {
+public class Course /*implements StudentResource*/ {
     private String id;
     private String name;
 
