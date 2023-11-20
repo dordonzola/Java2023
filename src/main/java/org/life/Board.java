@@ -2,9 +2,9 @@ package org.life;
 
 public class Board {
 
-  public int width;
-  public int height;
-  Organism[][] organisms;
+  private int width;
+  private int height;
+  private Organism[][] organisms;
 
   public Board(int width, int height) {
     this.width = width;
@@ -22,12 +22,14 @@ public class Board {
     }
   }
 
-  public void moveOrganism(Organism organism, Position position) {
-    int newX = position.getX(); //to jest dotychczasowa pozycja
-    int newY = position.getY();
-
+//  public void eatOrganism(Organism otherOrganism){
+//    this.energy+=otherOrganism.getEnergy();
+//    otherOrganism.setEnergy(0);
+//  }
+  public void moveOrganism(Organism organism, int newX, int newY) {
     if (newX >= 0 && newX < width && newY >= 0 && newY < height) {
-      if (organisms[newX][newY] != null) {
+      if (organisms[newX][newY] != null){
+        // One organism eats the other
         organism.eat(organisms[newX][newY]);
       }
       organisms[organism.getPosition().getX()][organism.getPosition().getY()] = null;
@@ -37,10 +39,7 @@ public class Board {
       System.out.println("Invalid move!");
     }
   }
-
-  public boolean isValidPosition(Position position) {
-    int newX = position.getX();
-    int newY = position.getY();
+  public boolean isValidPosition(int newX, int newY){
     return newX >= 0 && newX < width && newY >= 0 && newY < height;
   }
 

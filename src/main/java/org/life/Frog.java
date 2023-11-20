@@ -7,15 +7,12 @@ public class Frog extends Organism{
 
     private int energy;
     private Position position;
-    private final Random random = new Random();
+    private Random random = new Random();
     private Board board;
 
-    public Frog(int energy)
+    public Frog(int energy, Board board)
     {
-        super(energy);
-    }
-
-    public void setBoard(Board board) {
+        this.energy = energy;
         this.board = board;
     }
 
@@ -24,35 +21,20 @@ public class Frog extends Organism{
         int newX = position.getX(); //to jest dotychczasowa pozycja
         int newY = position.getY();
 
+        // Decide whether to move vertically or horizontally
         boolean moveVertically = random.nextBoolean(); //losowanie - prawda/fałsz
-        boolean direction=random.nextBoolean();
 
+        if (moveVertically) {
+            // Move up or down by 1
+            newY += random.nextBoolean() ? 2 : -2;
+        } else {
+            // Move left or right by 1
+            newX += random.nextBoolean() ? 2 : -2;
+        }
 
-        for (int i=0;i<2;i++) {  //Special power - two moves
-
-            if (moveVertically) {
-                // Move up or down by 1
-                newY += direction ? 1 : -1;
-            } else {
-                // Move left or right by 1
-                newX += direction ? 1 : -1;
-            }
-
-            Position newPosition = new Position(newX, newY);
-
-            if (board.isValidPosition(newPosition)) {
-                System.out.println(newX);
-                System.out.println(newY);
-                System.out.println("\n");
-                // Use the board's moveOrganism method to move the organism
-                board.moveOrganism(this, newPosition);
-            }
-            else{
-
-                    System.out.println("Koniec planszy!");
-
-            }
-            this.energy-=1;
+        if (board.isValidPosition(newX, newY)) {
+            // Use the board's moveOrganism method to move the organism
+            board.moveOrganism(newX, newY);
         }
     }
     public void setPosition(Position position) {
