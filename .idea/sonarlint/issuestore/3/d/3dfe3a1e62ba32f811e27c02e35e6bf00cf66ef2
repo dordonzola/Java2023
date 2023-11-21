@@ -1,0 +1,8 @@
+
+
+java:S41654"dRemove this useless assignment; "energy" already holds the assigned value along all execution paths.(ş§³«8ÿØ°ö¾1
+[
+java:S5993"9Change the visibility of this constructor to "protected".(Òô©êøÿÿÿÿ8€Ù°ö¾1
+X	java:S125$"<This block of commented-out lines of code should be removed.(ÿºÂ”8…Ù°ö¾1
+L
+java:S16564"/Remove or correct this useless self-assignment.(ş§³«8†Ù°ö¾1
