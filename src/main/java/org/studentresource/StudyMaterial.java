@@ -1,16 +1,10 @@
 package org.studentresource;
 
-public class Course implements StudentResource {
+public class StudyMaterial implements StudentResource{
+
     private String id;
     private String name;
 
-    void Course(String id, String name){
-        this.id=id;
-        this.name=name;
-    }
-
-    // Constructor, getters, setters
-    // Implement all necessary methods from StudentResource
     String getId(){
         return id;
     }
@@ -24,6 +18,4 @@ public class Course implements StudentResource {
     void setName(String newName){
         name=newName;
     }
-
-
 }

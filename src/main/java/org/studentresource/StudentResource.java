@@ -4,4 +4,7 @@ public interface StudentResource {
     String getId();
     String getName();
     // Add other necessary methods here
+    void setId(String newId);
+    void setName(String newName);
+
 }
