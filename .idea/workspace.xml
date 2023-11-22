@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba432361-6f80-4427-a59a-c3c1d09138c4" name="Changes" comment="life game updated">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3dfe3a1e62ba32f811e27c02e35e6bf00cf66ef2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/7228c7e12680325cecef46b11347b2f141ae29ed" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/b/8b174fa8907075ec3783abcef3671ef15674400b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/a/aa152b7f4819c072b96d2c4bd03114a0631c2ae0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/ac6d65e12159ca12d10d0b311db7bf912622dd8a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/ddfc3a0d13311838542b9be324eac5c5b0863e62" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/d/3dfe3a1e62ba32f811e27c02e35e6bf00cf66ef2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/2/7228c7e12680325cecef46b11347b2f141ae29ed" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/b/8b174fa8907075ec3783abcef3671ef15674400b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/a/aa152b7f4819c072b96d2c4bd03114a0631c2ae0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/c/ac6d65e12159ca12d10d0b311db7bf912622dd8a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/d/ddfc3a0d13311838542b9be324eac5c5b0863e62" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/life/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/life/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/life/Consume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/life/Eagle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/life/Eagle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/life/Frog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/life/Frog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/life/LifeSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/life/LifeSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/life/Organism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/life/Organism.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="lab05" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2XwZYzUEFN2ehLyYj7c2eLl28gF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab03&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dorja/Java2023&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba432361-6f80-4427-a59a-c3c1d09138c4" name="Changes" comment="" />
+      <created>1699542153730</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699542153730</updated>
+      <workItem from="1699542154923" duration="639000" />
+      <workItem from="1699542827723" duration="2532000" />
+      <workItem from="1699604829333" duration="963000" />
+      <workItem from="1699640434731" duration="5654000" />
+      <workItem from="1699646389261" duration="118000" />
+      <workItem from="1699646586080" duration="31000" />
+      <workItem from="1699646625759" duration="375000" />
+      <workItem from="1699974972857" duration="913000" />
+      <workItem from="1699992947404" duration="400000" />
+      <workItem from="1699995284318" duration="803000" />
+      <workItem from="1700034100346" duration="1116000" />
+      <workItem from="1700144254883" duration="1030000" />
+      <workItem from="1700476481858" duration="2466000" />
+      <workItem from="1700505526041" duration="8925000" />
+      <workItem from="1700558065358" duration="715000" />
+    </task>
+    <task id="LOCAL-00001" summary="leapyearcalculator.java added">
+      <option name="closed" value="true" />
+      <created>1699543400857</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699543400857</updated>
+    </task>
+    <task id="LOCAL-00002" summary="leapyearcalculator.java added">
+      <option name="closed" value="true" />
+      <created>1699544762073</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699544762073</updated>
+    </task>
+    <task id="LOCAL-00003" summary="leapyearcalculator.java added">
+      <option name="closed" value="true" />
+      <created>1699644466333</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699644466333</updated>
+    </task>
+    <task id="LOCAL-00004" summary="life game added">
+      <option name="closed" value="true" />
+      <created>1699995974124</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699995974124</updated>
+    </task>
+    <task id="LOCAL-00005" summary="life game updated">
+      <option name="closed" value="true" />
+      <created>1700517831391</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700517831391</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="lab05" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="leapyearcalculator.java added" />
+    <MESSAGE value="added organisms classes" />
+    <MESSAGE value="life game added" />
+    <MESSAGE value="life game updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="life game updated" />
+  </component>
+</project>
