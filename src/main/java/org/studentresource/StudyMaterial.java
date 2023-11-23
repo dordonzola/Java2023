@@ -2,8 +2,11 @@ package org.studentresource;
 
 public class StudyMaterial implements StudentResource{
 
-    private String id;
-    private String name;
+
+    public StudyMaterial(String id, String name){
+        this.id=id;
+        this.name=name;
+    }
 
     String getId(){
         return id;
