@@ -2,23 +2,25 @@ package org.studentresource;
 
 public class StudyMaterial implements StudentResource{
 
+    private String id=null;
+    private String name=null;
 
     public StudyMaterial(String id, String name){
         this.id=id;
         this.name=name;
     }
 
-    String getId(){
+    public String getId(){
         return id;
     }
-    String getName(){
+    public String getName(){
         return name;
     }
-    // Add other necessary methods here
-    void setId(String newId){
+
+    public void setId(String newId){
         id=newId;
     }
-    void setName(String newName){
+    public void setName(String newName){
         name=newName;
     }
 }

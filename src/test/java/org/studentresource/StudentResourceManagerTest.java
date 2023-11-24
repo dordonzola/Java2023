@@ -3,8 +3,7 @@ package org.studentresource;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class StudentResourceManagerTest {
     private StudentResourceManager<Course> manager;
@@ -26,8 +25,13 @@ class StudentResourceManagerTest {
 
     @Test
     void removeResourceTest() {
-        // Test removing resources
+        Course course = new Course("CS101", "Introduction to Computer Science");
+        manager.addResource(course);
+        StudentResourceManager<Course> newManager = (StudentResourceManager<Course>) manager.clone();
+        manager.removeResource(course);
+        assertNotEquals(manager, newManager, "Lists should not be the same.");
+
     }
 
-    // Add more tests to cover all functionalities
+
 }
