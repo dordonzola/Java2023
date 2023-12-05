@@ -1,7 +1,6 @@
 package org.simplestore.service;
 
 import org.simplestore.model.Inventory;
-import org.simplestore.model.Product;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,4 +22,8 @@ public class ShoppingCart {
     // TODO: Implement a method to calculate the total price of the cart
     // TODO: Implement a method to clear the cart
 
+
+    public ShoppingCart(Inventory inventory) {
+        this.inventory = inventory;
+    }
 }

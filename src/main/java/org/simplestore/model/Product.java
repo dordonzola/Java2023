@@ -15,4 +15,8 @@ public class Product {
     // Getters and toString() method, see: src/test/java/org/simplestore/model/ProductTest.java
     // TODO: Implement getters for id, name, and price
     // TODO: Override toString() method for Product representation
+
+    public int getId() {
+        return id;
+    }
 }
