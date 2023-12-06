@@ -1,6 +1,5 @@
 package org.simplestore.model;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,14 +20,7 @@ public class Inventory {
         return product;
     }
 
-    public Collection<Product> listAllProducts() {
-        return products.values();
-    }
-
-    public void removeProduct(int id) {
-        products.remove(id);
-    }
-
-
-
+    // See file: src/test/java/org/simplestore/model/InventoryTest.java
+    // TODO: Implement a method to list all products
+    // TODO: Implement a method to remove a product by id
 }
