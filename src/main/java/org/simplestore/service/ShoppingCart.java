@@ -42,7 +42,10 @@ public class ShoppingCart {
     }
 
     public void clearCart() {
-        cartItems.clear();
+
+        for(Map.Entry<Integer, Integer> item : cartItems.entrySet()){
+            cartItems.put(item.getKey(), 0);
+        }
     }
 
     public double calculateTotalCost() throws ProductNotFoundException {

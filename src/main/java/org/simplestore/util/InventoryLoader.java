@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+
+
 public class InventoryLoader {
 
     public static void loadInventory(String filePath, Inventory inventory) {
@@ -25,7 +27,8 @@ public class InventoryLoader {
                      id = Integer.parseInt(parts[0].trim());
                 }
                 catch(NumberFormatException e){
-                    System.err.println("Wprowadzono zły format danych!");
+                    System.err.println("Invalid data format");
+                    continue;
                 }
 
                 String name = parts[1].trim();
@@ -36,7 +39,8 @@ public class InventoryLoader {
                      price = Double.parseDouble(parts[2].trim());
                 }
                 catch(NumberFormatException e){
-                    System.err.println("Wprowadzono zły format danych!");
+                    System.err.println("Invalid data format");
+                    continue;
                 }
 
                 if (id == -1 || price == -1) {
