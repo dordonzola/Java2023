@@ -5,16 +5,14 @@ import org.simplestore.model.Product;
 import org.simplestore.service.ShoppingCart;
 import org.simplestore.util.InventoryLoader;
 
-import java.io.InputStream;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
 
-        InventoryLoader.loadInventory("/src/main/resources/inventory.txt", inventory);
+        InventoryLoader.loadInventory("src/main/resources/inventory.txt", inventory);
 
-        // Implement example usage of application components
+
         ShoppingCart shoppingCart1=new ShoppingCart();
 
         shoppingCart1.addItem(1,4);
@@ -24,7 +22,7 @@ public class Main {
         shoppingCart1.addItem(5,2);
         shoppingCart1.addItem(6,2);
 
-
+        shoppingCart1.clearCart();
 
         ShoppingCart shoppingCart2=new ShoppingCart();
 
@@ -51,21 +49,26 @@ public class Main {
         shoppingCart3.addItem(4,2);
         shoppingCart3.addItem(5,1);
         shoppingCart3.addItem(6,8);
-        //Dodajemy nowe pozycje
-        shoppingCart3.addItem(11,2);
-        shoppingCart3.addItem(12,1);
-        shoppingCart3.addItem(13,8);
-
-        shoppingCart1.clearCart();
 
 
+        System.out.println("Pierwotna lista:");
+        inventory.listAllProducts();
+
+        inventory.addProduct(product11);
+        inventory.addProduct(product12);
+        inventory.addProduct(product13);
+
+        System.out.println("Lista po dodaniu produktów:");
+        inventory.listAllProducts();
+
+        inventory.removeProduct(1);
+        inventory.removeProduct(2);
+        inventory.removeProduct(3);
+
+        System.out.println("Lista po odjęciu produktów:");
+        inventory.listAllProducts();
 
 
-
-        //Handle exceptions, etc.
-
-        // TODO: Add product to inventory, list all products
-        // TODO: Remove product from inventory, list all products
     }
 }
 

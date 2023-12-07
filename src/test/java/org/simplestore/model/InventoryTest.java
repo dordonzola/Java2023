@@ -46,7 +46,4 @@ class InventoryTest {
         inventory.removeProduct(1);
         assertThrows(ProductNotFoundException.class, () -> inventory.getProduct(1), "Product1 should be removed and not found");
     }
-
-    // Note for presenter: Explain the importance of testing each functionality of the Inventory class.
-    // Discuss how these tests ensure the correctness of adding, retrieving, listing, and removing products.
 }

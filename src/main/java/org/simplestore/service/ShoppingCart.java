@@ -8,27 +8,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCart {
-    // Remember of synchronization logic!
-    // It could be achieved in many ways.
+
     private final Inventory inventory;
     private final Map<Integer, Integer> cartItems = new HashMap<>();
 
-    public ShoppingCart() {
+    public  ShoppingCart() {
         this.inventory=null;
     }
     public ShoppingCart(Inventory inventory) {
         this.inventory=inventory;
     }
 
-    public void addItem(int productId, int quantity) {
-        cartItems.merge(productId, quantity, Integer::sum);  // Equivalent of lambda (a, b) -> Integer.sum(a, b)
+    public synchronized void addItem(int productId, int quantity) {
+        cartItems.merge(productId, quantity, Integer::sum);
     }
 
-    public int getItemQuantity(int item) {
+    public synchronized int getItemQuantity(int item) {
         return cartItems.get(item);
     }
 
-    public void removeItem(int item, int quantity) {
+    public synchronized void removeItem(int item, int quantity) {
         int currentQuantity=cartItems.get(item);
         if (currentQuantity>=quantity){
             cartItems.remove(item);
@@ -41,14 +40,14 @@ public class ShoppingCart {
         }
     }
 
-    public void clearCart() {
+    public synchronized void clearCart() {
 
         for(Map.Entry<Integer, Integer> item : cartItems.entrySet()){
             cartItems.put(item.getKey(), 0);
         }
     }
 
-    public double calculateTotalCost() throws ProductNotFoundException {
+    public synchronized double calculateTotalCost() throws ProductNotFoundException {
         double cost=0;
         int id;
         for(Map.Entry<Integer, Integer> entry : cartItems.entrySet()){

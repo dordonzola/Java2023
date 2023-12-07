@@ -11,11 +11,11 @@ public class Product {
         this.price = price;
     }
 
-    public int getId(){return this.id;}
-    public String getName(){return this.name;}
-    public double getPrice(){return this.price;}
+    public synchronized int getId(){return this.id;}
+    public synchronized String getName(){return this.name;}
+    public synchronized double getPrice(){return this.price;}
 
-    public String toString(){
+    public synchronized String toString(){
         return "Product{id="+this.id+", name='"+this.name+"', price="+this.price+"}";
     }
 

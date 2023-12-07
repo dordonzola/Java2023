@@ -4,27 +4,34 @@ import org.junit.jupiter.api.Test;
 import org.simplestore.model.Inventory;
 import org.simplestore.model.Product;
 import org.simplestore.model.ProductNotFoundException;
+import org.simplestore.util.MyRunnable;
+import org.simplestore.util.MyRunnable2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class ShoppingCartConcurrencyTest {
     private final Inventory inventory = new Inventory();
+
 
     @Test
     void addAndRemoveItemsConcurrently() throws InterruptedException {
         ShoppingCart shoppingCart = new ShoppingCart(inventory);
         inventory.addProduct(new Product(1, "Test Product", 10.0));
 
-        // Prepare tests with 10 threads. Next:
 
-        // TODO Add 100 items concurrently
+        Thread[] threads = new Thread[10];
 
-        // TODO Remove 50 items concurrently
+        for (int i = 0; i < threads.length; i++) {
+            threads[i] = new Thread(new MyRunnable(shoppingCart));
+            threads[i].start();
+        }
 
-        // TODO Await for threads termination, eg. join
 
-        // Check if the final quantity is as expected
+        for (int i=0;i<10;i++){
+            threads[i].join();
+        }
+
         assertEquals(50, shoppingCart.getItemQuantity(1));
     }
 
@@ -33,12 +40,20 @@ public class ShoppingCartConcurrencyTest {
         ShoppingCart shoppingCart = new ShoppingCart(inventory);
         inventory.addProduct(new Product(1, "Test Product", 10.0));
 
-        // TODO Add 100 items concurrently
-        // TODO Await for threads termination, eg. join
+        Thread[] threads = new Thread[10];
+
+        for (int i = 0; i < threads.length; i++) {
+            threads[i] = new Thread(new MyRunnable2(shoppingCart));
+            threads[i].start();
+        }
+
+
+        for (int i=0;i<10;i++){
+            threads[i].join();
+        }
 
         // Check if the total cost calculation is correct
         assertEquals(1000.0, shoppingCart.calculateTotalCost());
     }
 
-    // Note for presenter: Discuss the importance of concurrency testing in a multi-threaded environment.
 }

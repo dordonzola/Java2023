@@ -62,5 +62,4 @@ class ShoppingCartTest {
         assertEquals(2, shoppingCart.getItemQuantity(2), "Quantity for product ID 2 should be correct");
     }
 
-    // Note for presenter: Discuss the importance of comprehensive testing for different scenarios.
 }

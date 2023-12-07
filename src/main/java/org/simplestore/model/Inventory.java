@@ -5,15 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Inventory {
-    // TODO: Remember of synchronization logic!
-    // There is several methods to achieve this.
+
     private final Map<Integer, Product> products = new HashMap<>();
 
-    public void addProduct(Product product) {
+    public synchronized void addProduct(Product product) {
         products.put(product.getId(), product);
     }
 
-    public Product getProduct(int id) throws ProductNotFoundException {
+    public synchronized Product getProduct(int id) throws ProductNotFoundException {
         Product product = products.get(id);
         if (product == null) {
             throw new ProductNotFoundException("Product with ID " + id + " not found.");
@@ -21,11 +20,12 @@ public class Inventory {
         return product;
     }
 
-    public Collection<Product> listAllProducts() {
+    public synchronized Collection<Product> listAllProducts() {
+        System.out.println(products.values());
         return products.values();
     }
 
-    public void removeProduct(int id) {
+    public synchronized void removeProduct(int id) {
         products.remove(id);
     }
 

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class InventoryLoader {
 
-    public static void loadInventory(String filePath, Inventory inventory) {
+    public static synchronized void loadInventory(String filePath, Inventory inventory) {
 
         BufferedReader reader = null;
         try {
