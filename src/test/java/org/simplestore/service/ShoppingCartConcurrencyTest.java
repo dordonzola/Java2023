@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.simplestore.model.Inventory;
 import org.simplestore.model.Product;
 import org.simplestore.model.ProductNotFoundException;
-import org.simplestore.util.MyRunnable;
-import org.simplestore.util.MyRunnable2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,18 +17,27 @@ public class ShoppingCartConcurrencyTest {
         ShoppingCart shoppingCart = new ShoppingCart(inventory);
         inventory.addProduct(new Product(1, "Test Product", 10.0));
 
-
-        Thread[] threads = new Thread[10];
-
-        for (int i = 0; i < threads.length; i++) {
-            threads[i] = new Thread(new MyRunnable(shoppingCart));
-            threads[i].start();
+        for (int i=0;i<10;i++)
+        {
+            Thread addThread=new Thread(() ->{
+                for (int j=0;j<10;j++){
+                    shoppingCart.addItem(1,1);
+                }
+        });
+            addThread.start();
         }
 
-
-        for (int i=0;i<10;i++){
-            threads[i].join();
+        for (int i=0;i<10;i++)
+        {
+            Thread removeThread=new Thread(() ->{
+                for (int j=0;j<5;j++){
+                    shoppingCart.removeItem(1,1);
+                }
+            });
+            removeThread.start();
         }
+
+        Thread.sleep(2000);
 
         assertEquals(50, shoppingCart.getItemQuantity(1));
     }
@@ -40,19 +47,20 @@ public class ShoppingCartConcurrencyTest {
         ShoppingCart shoppingCart = new ShoppingCart(inventory);
         inventory.addProduct(new Product(1, "Test Product", 10.0));
 
-        Thread[] threads = new Thread[10];
-
-        for (int i = 0; i < threads.length; i++) {
-            threads[i] = new Thread(new MyRunnable2(shoppingCart));
-            threads[i].start();
+        double totalPrice=0;
+        for (int i=0;i<10;i++)
+        {
+            Thread addThread=new Thread(() ->{
+                for (int j=0;j<10;j++){
+                    shoppingCart.addItem(1,1);
+                }
+            });
+            addThread.start();
         }
+        Thread.sleep(2000);
 
 
-        for (int i=0;i<10;i++){
-            threads[i].join();
-        }
 
-        // Check if the total cost calculation is correct
         assertEquals(1000.0, shoppingCart.calculateTotalCost());
     }
 
