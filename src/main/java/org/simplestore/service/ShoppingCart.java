@@ -27,24 +27,22 @@ public class ShoppingCart {
         return cartItems.get(item);
     }
 
-    public synchronized void removeItem(int item, int quantity) {
-        int currentQuantity=cartItems.get(item);
-        if (currentQuantity>=quantity){
+    public synchronized void removeItem(int item, int quantity) throws IllegalArgumentException {
+        int afterDeleting=cartItems.get(item)-quantity;
+        if (afterDeleting>=0){
             cartItems.remove(item);
-            if (currentQuantity>quantity){
-                cartItems.put(item,currentQuantity-quantity);
+            if (afterDeleting>0){
+                cartItems.put(item,afterDeleting);
             }
         }
         else {
-            System.out.println("Błąd! Próba usunięcia większej ilości produktów niż dostepna!");
+            throw new IllegalArgumentException("Błąd! Próba usunięcia większej ilości produktów niż dostepna!");
         }
     }
 
     public synchronized void clearCart() {
 
-        for(Map.Entry<Integer, Integer> item : cartItems.entrySet()){
-            cartItems.put(item.getKey(), 0);
-        }
+        cartItems.clear();
     }
 
     public synchronized double calculateTotalCost() throws ProductNotFoundException {
