@@ -1,2 +1,1 @@
-# java2023public
-Lab for Java
+# Dorota Jabłońska
