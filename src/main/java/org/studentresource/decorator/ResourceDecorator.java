@@ -5,11 +5,14 @@ import org.studentresource.StudentResource;
 public abstract class ResourceDecorator implements StudentResource {
     protected StudentResource decoratedResource;
 
-    private String id=null;
-    private String name=null;
+    private String id;
+    private String name;
     public ResourceDecorator(StudentResource decoratedResource) {
         this.decoratedResource = decoratedResource;
+        this.id=decoratedResource.getId();
+        this.name=decoratedResource.getName();
     }
+
 
     @Override
     public String getId(){
