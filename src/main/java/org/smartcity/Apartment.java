@@ -1,7 +1,8 @@
 package org.smartcity;
 
 public class Apartment extends Building{
-    public void operate(){
-
-
+    public int residents;
+    public void operate() {
+        System.out.println("Apartment at " + getAddress() + " has " + residents + " residents.");
+    }
 }
