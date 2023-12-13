@@ -8,7 +8,8 @@ public class Shop extends Building{
         this.type=type;
     }
 
-    public void operate() {
+    @Override
+    public synchronized void operate() {
         System.out.println("Shop at " + getAddress() + " is a " + type + " shop.");
     }
 }

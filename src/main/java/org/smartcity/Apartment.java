@@ -8,7 +8,8 @@ public class Apartment extends Building{
         this.residents=residents;
     }
 
-    public void operate() {
+    @Override
+    public synchronized void operate() {
         System.out.println("Apartment at " + getAddress() + " has " + residents + " residents.");
     }
 }

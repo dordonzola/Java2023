@@ -8,7 +8,8 @@ public class Office extends Building{
         this.employees=employees;
 
     }
-    public void operate() {
+    @Override
+    public synchronized void operate() {
         System.out.println("Office at " + getAddress() + " has " + employees + " employees.");
     }
 }

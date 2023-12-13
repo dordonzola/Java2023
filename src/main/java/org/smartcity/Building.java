@@ -9,7 +9,7 @@ public abstract class Building {
         this.floors = floors;
     }
 
-    public abstract void operate();
+    public  abstract  void operate();
 
     public String getAddress() {
         return address;

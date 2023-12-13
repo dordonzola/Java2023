@@ -43,16 +43,4 @@ public class CitySimulation {
     }
 }
 
-// 1. TODO Losowe tworzenie nowych budynków
-// Losowo zadecyduj, czy dodać nowy budynek do miasta - jeśli ma byc dodany
-// Użyj funkcji createRandomBuilding(day) i wypisz:
-// System.out.println("New building added: " + newBuilding.getAddress());
-
-
-
-// 2. TODO Operowanie na wszystkich budynkach w osobnych wątkach
-// Ilość wątków powinna być równa ilości budynków w mieście
-// Każdy wątek ma tylko jedno zadanie - wykonać funkcję operate() na danym budynku
-// Możesz wykorzystać klasę Runnable lub Thread do realizacji tego zadania
-// Pamietaj, żeby upewnić się, że wszystkie wątki się zakończyły przed przejściem do kolejnego dnia
 
