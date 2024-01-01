@@ -1,5 +1,7 @@
 package org.starmap.controller;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
 import org.starmap.model.Constellation;
 import org.starmap.model.Star;
 import org.starmap.utils.DataLoader;
@@ -8,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 // Controller for managing the star map
-public class StarMapController {
+public class StarMapController extends Application {
     private List<Star> stars;
     private List<Constellation> constellations;
 
@@ -61,5 +63,10 @@ public class StarMapController {
     // Remove a constellation from the map
     public void removeConstellation(String name) {
         constellations.removeIf(constellation -> constellation.getName().equalsIgnoreCase(name));
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
     }
 }
