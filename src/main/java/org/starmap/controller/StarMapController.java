@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Optional;
 
 // Controller for managing the star map
-public class StarMapController extends Application {
-    private List<Star> stars;
-    private List<Constellation> constellations;
+public class StarMapController {
+    private static List<Star> stars;
+    private static List<Constellation> constellations;
 
     public StarMapController(String dataFilePath) {
         this.stars = DataLoader.loadStars(dataFilePath);
@@ -36,22 +36,22 @@ public class StarMapController extends Application {
     }
 
     // Get a star by its name
-    public Optional<Star> getStarByName(String name) {
+    public static Optional<Star> getStarByName(String name) {
         return stars.stream().filter(star -> star.getName().equalsIgnoreCase(name)).findFirst();
     }
 
     // Get a constellation by its name
-    public Optional<Constellation> getConstellationByName(String name) {
+    public static Optional<Constellation> getConstellationByName(String name) {
         return constellations.stream().filter(constellation -> constellation.getName().equalsIgnoreCase(name)).findFirst();
     }
 
     // Add a new star to the map
-    public void addStar(Star star) {
+    public static void addStar(Star star) {
         stars.add(star);
     }
 
     // Remove a star from the map
-    public void removeStar(String name) {
+    public static void removeStar(String name) {
         stars.removeIf(star -> star.getName().equalsIgnoreCase(name));
     }
 
@@ -65,8 +65,5 @@ public class StarMapController extends Application {
         constellations.removeIf(constellation -> constellation.getName().equalsIgnoreCase(name));
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
 
-    }
 }

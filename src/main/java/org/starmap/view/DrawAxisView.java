@@ -4,4 +4,11 @@
 package org.starmap.view;
 
 public class DrawAxisView {
+    public void DrawAxis(){
+
+    }
+
+    public void HideAxis(){
+
+    }
 }
