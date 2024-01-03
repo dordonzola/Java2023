@@ -24,4 +24,23 @@ public class EditStarView {
         star.setYPosition(yPosition);
     }
 
+
+    setOnMouseClicked(event -> {
+        // Obsługa kliknięcia myszką
+        // Możesz tutaj wywołać metodę zmiany nazwy, jasności itp.
+    });
+
+    setOnMouseDragged(event -> {
+        // Obsługa przeciągnięcia myszką
+        double newX = event.getSceneX();
+        double newY = event.getSceneY();
+
+        // Ustaw nowe położenie gwiazdy
+        star.setXPosition(newX);
+        star.setYPosition(newY);
+
+        setCenterX(newX);
+        setCenterY(newY);
+    });
+
 }

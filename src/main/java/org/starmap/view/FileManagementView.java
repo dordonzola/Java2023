@@ -1,15 +1,32 @@
 package org.starmap.view;
 
-//Wczytywanie i zapis do nowego pliku, nadpisanie istniejącego pliku.
-// Dla dobrej separacji zadań, jako oddzielny kontroler.
+import org.starmap.controller.FileManagementController;
+import org.starmap.model.Constellation;
+import org.starmap.model.Star;
+
+import java.util.List;
 
 public class FileManagementView {
 
-    public void readFromJSON(){
+    private final FileManagementController controller;
 
+    public FileManagementView(FileManagementController controller) {
+        this.controller = controller;
     }
 
-    public void writeToJSON(){
+    public void loadConstellationsFromJSON(String filePath, List<Star> stars) {
+        controller.loadConstellations(filePath, stars);
+    }
 
+    public void loadStarsFromJSON(String filePath) {
+        controller.loadStars(filePath);
+    }
+
+    public void writeConstellationsToJSON(String filePath, List<Constellation> constellations) {
+        controller.writeConstellations(filePath, constellations);
+    }
+
+    public void writeStarsToJSON(String filePath, List<Star> stars) {
+        controller.writeStars(filePath,  stars);
     }
 }
