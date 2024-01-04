@@ -1,25 +1,31 @@
 package org.starmap.view;
 
 import javafx.animation.PauseTransition;
+import javafx.collections.ObservableList;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 import org.starmap.controller.StarMapController;
 import org.starmap.model.Constellation;
 import org.starmap.model.Star;
+import java.util.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-
-public class StarMapView extends Canvas {
+    public class StarMapView extends Canvas {
     private final StarMapController controller;
+
+
     private PauseTransition pause = new PauseTransition(Duration.seconds(0.5));
     private Star currentHoveredStar = null;
     private Map<String, Color> constellationColors = new HashMap<>();
+
+    private  NumberAxis xAxis;
+    private  NumberAxis yAxis;
+    static LineChart <Number, Number> lineChart;
 
     public StarMapView(StarMapController controller) {
         this.controller = controller;
@@ -28,7 +34,12 @@ public class StarMapView extends Canvas {
         drawMap();
         initializeConstellationColors();
         addMouseMotionListener();
+
+        xAxis = new NumberAxis();
+        yAxis = new NumberAxis();
+        lineChart = new LineChart<>(xAxis, yAxis);
     }
+
 
     private void initializeConstellationColors() {
         List<Constellation> constellations = controller.getConstellations();
@@ -114,7 +125,7 @@ public class StarMapView extends Canvas {
 
             if (foundStar != null && foundStar != currentHoveredStar) {
                 currentHoveredStar = foundStar;
-                pause.stop(); // Zatrzymaj poprzednie opóźnienie
+                pause.stop();
                 drawStarName(foundStar);
             } else if (foundStar == null && currentHoveredStar != null) {
                 pause.setOnFinished(e -> {
@@ -124,6 +135,27 @@ public class StarMapView extends Canvas {
                 pause.playFromStart();
             }
         });
+
+        //Edit parameters of star on click
+
+        this.setOnMouseClicked(event -> {
+            double mouseX = event.getX();
+            double mouseY = event.getY();
+            Star foundStar = null;
+
+            List<Star> stars = controller.getStars();
+            for (Star star : stars) {
+                if (Math.abs(mouseX - star.getXPosition()) < 10 && Math.abs(mouseY - star.getYPosition()) < 10) {
+                    foundStar = star;
+                    break;
+                }
+            }
+
+            if (foundStar != null) {
+                controller.editStar(foundStar);
+            }
+        });
+
     }
 
     private void drawStarName(Star star) {
@@ -136,7 +168,7 @@ public class StarMapView extends Canvas {
         if (currentHoveredStar != null) {
             pause.setOnFinished(e -> {
                 clearCanvas();
-                drawMap(); // Rysuj wszystko od nowa
+                drawMap();
             });
             pause.playFromStart();
         }
@@ -146,4 +178,24 @@ public class StarMapView extends Canvas {
         GraphicsContext gc = getGraphicsContext2D();
         gc.clearRect(0, 0, getWidth(), getHeight());
     }
-}
+
+
+
+    public NumberAxis getXAxis() {
+        return xAxis;
+    }
+
+    public NumberAxis getYAxis() {
+        return yAxis;
+    }
+
+    public void addDataSeries(XYChart.Series<Number, Number> series) {
+        lineChart.getData().add(series);
+    }
+    public ObservableList<XYChart.Data<Number, Number>> getData() {
+        XYChart.Series<Number, Number> series = (XYChart.Series<Number, Number>) lineChart.getData().get(0);
+
+        return series.getData();
+    }
+    }
+
