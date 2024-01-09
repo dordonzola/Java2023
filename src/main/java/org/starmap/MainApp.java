@@ -3,11 +3,8 @@ package org.starmap;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.chart.LineChart;
 import javafx.stage.Stage;
 import org.starmap.controller.StarMapController;
-import org.starmap.model.Constellation;
-import org.starmap.view.DrawAxisView;
 import org.starmap.view.StarMapView;
 
 // Main application class for the star map
@@ -36,6 +33,5 @@ public class MainApp extends Application {
 
         view.drawMap(); // Call this after the scene is shown
 
-        DrawAxisView.DrawAxis(view,1,2,1,2);
     }
 }

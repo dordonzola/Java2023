@@ -57,6 +57,7 @@ import java.util.*;
         gc.fillRect(0, 0, getWidth(), getHeight()); // Set background to black
         drawStars();
         drawConstellations();
+        DrawGrid();
     }
 
     private void drawStars() {
@@ -181,14 +182,6 @@ import java.util.*;
 
 
 
-    public NumberAxis getXAxis() {
-        return xAxis;
-    }
-
-    public NumberAxis getYAxis() {
-        return yAxis;
-    }
-
     public void addDataSeries(XYChart.Series<Number, Number> series) {
         lineChart.getData().add(series);
     }
@@ -196,6 +189,25 @@ import java.util.*;
         XYChart.Series<Number, Number> series = (XYChart.Series<Number, Number>) lineChart.getData().get(0);
 
         return series.getData();
+    }
+
+    public void DrawGrid(){
+        double middleHeight=getHeight()/2;
+        double firstQuarterHeight=getHeight()/4;
+        double secondQuarterHeight=3*getHeight()/4;
+        double middleWidth=getWidth()/2;
+        double firstQuarterWidth=getWidth()/4;
+        double secondQuarterWidth=3*getWidth()/4;
+
+        GraphicsContext gc = getGraphicsContext2D();
+        gc.setLineWidth(0.5);
+        gc.strokeLine(0, middleHeight, getWidth(), middleHeight);
+        gc.strokeLine(0, firstQuarterHeight, getWidth(), firstQuarterHeight);
+        gc.strokeLine(0, secondQuarterHeight, getWidth(), secondQuarterHeight);
+
+        gc.strokeLine(middleWidth, 0,middleWidth , getHeight());
+        gc.strokeLine(firstQuarterWidth, 0,firstQuarterWidth , getHeight());
+        gc.strokeLine(secondQuarterWidth, 0,secondQuarterWidth , getHeight());
     }
     }
 
