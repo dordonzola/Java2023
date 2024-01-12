@@ -1,27 +1,38 @@
 package org.smartcity;
 
+
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class CitySimulation {
     public static void main(String[] args) throws InterruptedException {
         SmartCity city = new SmartCity();
 
-        // Symulacja trwa przez 10 "dni"
+
         for (int day = 1; day <= 10; day++) {
             System.out.println("Day " + day + " in Smart City");
 
             Random rd = new Random();
-            if (rd.nextBoolean()){
-                Building newBuilding=createRandomBuilding(day);
+            List<Thread> threads = new ArrayList<>();
+
+            if (rd.nextBoolean()) {
+                Building newBuilding = createRandomBuilding(day);
                 System.out.println("New building added: " + newBuilding.getAddress());
 
-                Thread addThread=new Thread(() ->{
+                Thread addThread = new Thread(() -> {
                     newBuilding.operate();
                 });
                 addThread.start();
-                Thread.sleep(1000);
-            }
+                threads.add(addThread);
 
+            }
+            Thread.sleep(1000);
+
+            for (Thread thread : threads) {
+                thread.join();
+            }
         }
     }
 
