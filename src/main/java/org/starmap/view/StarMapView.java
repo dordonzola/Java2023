@@ -23,9 +23,7 @@ import java.util.*;
     private Star currentHoveredStar = null;
     private Map<String, Color> constellationColors = new HashMap<>();
 
-    private  NumberAxis xAxis;
-    private  NumberAxis yAxis;
-    static LineChart <Number, Number> lineChart;
+
 
     public StarMapView(StarMapController controller) {
         this.controller = controller;
@@ -34,10 +32,6 @@ import java.util.*;
         drawMap();
         initializeConstellationColors();
         addMouseMotionListener();
-
-        xAxis = new NumberAxis();
-        yAxis = new NumberAxis();
-        lineChart = new LineChart<>(xAxis, yAxis);
     }
 
 
@@ -182,14 +176,6 @@ import java.util.*;
 
 
 
-    public void addDataSeries(XYChart.Series<Number, Number> series) {
-        lineChart.getData().add(series);
-    }
-    public ObservableList<XYChart.Data<Number, Number>> getData() {
-        XYChart.Series<Number, Number> series = (XYChart.Series<Number, Number>) lineChart.getData().get(0);
-
-        return series.getData();
-    }
 
     public void DrawGrid(){
         double middleHeight=getHeight()/2;
