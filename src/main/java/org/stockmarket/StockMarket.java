@@ -2,12 +2,10 @@ package org.stockmarket;
 
 import org.stockmarket.model.Stock;
 import org.stockmarket.model.StockType;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class StockMarket {
     private final List<Stock> stocks;
@@ -20,10 +18,6 @@ public class StockMarket {
         stocks.add(stock);
     }
 
-    // TODO zaimplementuj metodę, która zwraca opisy wszystkich akcje danego typu, razem z opisem, np.
-    //  "AAPL - Technology and innovation sector - $150.0",
-    //  "MSFT - Technology and innovation sector - $200.0",
-    //  ...
     public List<String> listStocksByType(StockType type) {
         List<String> result=new ArrayList<>();
         String stockData="";
