@@ -1,12 +1,8 @@
 package org.starmap.view;
 
 import javafx.animation.PauseTransition;
-import javafx.collections.ObservableList;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
@@ -27,8 +23,8 @@ import java.util.*;
 
     public StarMapView(StarMapController controller) {
         this.controller = controller;
-        this.setWidth(1024); // Set canvas width
-        this.setHeight(768); // Set canvas height
+        this.setWidth(800); // Set canvas width
+        this.setHeight(500); // Set canvas height
         drawMap();
         initializeConstellationColors();
         addMouseMotionListener();
@@ -96,7 +92,7 @@ import java.util.*;
                 gc.strokeLine(start.getXPosition(), start.getYPosition(), end.getXPosition(), end.getYPosition());
             }
 
-            // Rysuj nazwę konstelacji obok pierwszej gwiazdy
+            // Show constellation name next to frst star
             if (!starsInConstellation.isEmpty()) {
                 Star firstStar = starsInConstellation.get(0);
                 gc.fillText(constellation.getName(), firstStar.getXPosition(), firstStar.getYPosition() - 15);
@@ -147,7 +143,7 @@ import java.util.*;
             }
 
             if (foundStar != null) {
-                controller.editStar(foundStar);
+                controller.randomDialog(foundStar);
             }
         });
 
@@ -175,9 +171,8 @@ import java.util.*;
     }
 
 
-
-
     public void DrawGrid(){
+        //positions of lines
         double middleHeight=getHeight()/2;
         double firstQuarterHeight=getHeight()/4;
         double secondQuarterHeight=3*getHeight()/4;

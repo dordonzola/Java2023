@@ -3,6 +3,7 @@ package org.starmap;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.starmap.controller.StarMapController;
 import org.starmap.view.StarMapView;
@@ -22,14 +23,11 @@ public class MainApp extends Application {
         Group root = new Group(); // Create Group container
         root.getChildren().add(view); // Add StarMapView to container
 
-        Scene scene = new Scene(root, 1024, 768); // Create Scene with Group container
+        Scene scene = new Scene(root, 800, 500); // Create Scene with Group container
 
         primaryStage.setTitle("Star Map");
         primaryStage.setScene(scene);
         primaryStage.show();
-
-
-
 
         view.drawMap(); // Call this after the scene is shown
 

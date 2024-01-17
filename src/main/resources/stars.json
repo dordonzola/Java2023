@@ -33,7 +33,7 @@
     {
       "name": "Rigel",
       "xPosition": 320,
-      "yPosition": 500,
+      "yPosition": 300,
       "brightness": 0.12
     },
     {
@@ -44,49 +44,49 @@
     },
     {
       "name": "Spica",
-      "xPosition": 600,
+      "xPosition": 450,
       "yPosition": 300,
       "brightness": 0.98
     },
     {
       "name": "Porrima",
-      "xPosition": 620,
+      "xPosition": 470,
       "yPosition": 320,
       "brightness": 2.74
     },
     {
       "name": "Auva",
-      "xPosition": 610,
+      "xPosition": 460,
       "yPosition": 340,
       "brightness": 3.40
     },
     {
       "name": "Vindemiatrix",
-      "xPosition": 630,
+      "xPosition": 490,
       "yPosition": 310,
       "brightness": 2.85
     },
     {
       "name": "Antares",
-      "xPosition": 800,
+      "xPosition": 600,
       "yPosition": 200,
       "brightness": 1.06
     },
     {
       "name": "Shaula",
-      "xPosition": 820,
+      "xPosition": 620,
       "yPosition": 220,
       "brightness": 1.62
     },
     {
       "name": "Sargas",
-      "xPosition": 810,
+      "xPosition": 610,
       "yPosition": 240,
       "brightness": 1.86
     },
     {
       "name": "Kaus Australis",
-      "xPosition": 830,
+      "xPosition": 630,
       "yPosition": 210,
       "brightness": 1.79
     }
