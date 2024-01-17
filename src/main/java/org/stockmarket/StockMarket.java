@@ -26,10 +26,20 @@ public class StockMarket {
     //  ...
     public List<String> listStocksByType(StockType type) {
         List<String> result=new ArrayList<>();
-        result.add(type.getName());
-        result.add(" - ");
-        result.add(type.getDescription());
+        String stockData="";
+        for (Stock stock : stocks) {
+            if (stock.getType()==type)
+            {
+                stockData+=stock.getSymbol();
+                stockData+=" - ";
+                stockData+=stock.getTypeDescription();
+                stockData+=" - ";
+                stockData+=stock.getPrice();
+                result.add(stockData);
+                stockData="";
 
+            }
+        }
         return result;
     }
 
@@ -41,8 +51,7 @@ public class StockMarket {
         }
     }
 
-    // TODO zaimplentuj metodę, która zwraca daną akcję.
-    //  Użyj optional na wypadek, gdyby nie było akcji o danym symbolu.
+
     public Optional<Stock> getStock(String symbol) {
         for (Stock stock : stocks) {
             if (Objects.equals(stock.getSymbol(), symbol)) {
@@ -52,7 +61,7 @@ public class StockMarket {
         return Optional.empty();
     }
 
-    // TODO zaimplentuj metodę, która zwraca wszystkie akcje
+
     public List<Stock> getStocks() {
         return stocks;
     }
