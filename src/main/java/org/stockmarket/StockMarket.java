@@ -5,6 +5,7 @@ import org.stockmarket.model.StockType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -24,22 +25,35 @@ public class StockMarket {
     //  "MSFT - Technology and innovation sector - $200.0",
     //  ...
     public List<String> listStocksByType(StockType type) {
-        // TODO
+        List<String> result=new ArrayList<>();
+        result.add(type.getName());
+        result.add(" - ");
+        result.add(type.getDescription());
+
+        return result;
     }
 
-    // TODO zaimplementuj metodę, która ustawia nową cenę danej akcji
     public void updateStockPrice(String symbol, double newPrice) {
-        // TODO
+        for (Stock stock : stocks) {
+            if (Objects.equals(stock.getSymbol(), symbol)) {
+                stock.setPrice(newPrice);
+            }
+        }
     }
 
     // TODO zaimplentuj metodę, która zwraca daną akcję.
     //  Użyj optional na wypadek, gdyby nie było akcji o danym symbolu.
     public Optional<Stock> getStock(String symbol) {
-        // TODO
+        for (Stock stock : stocks) {
+            if (Objects.equals(stock.getSymbol(), symbol)) {
+                return Optional.of(stock);
+            }
+        }
+        return Optional.empty();
     }
 
     // TODO zaimplentuj metodę, która zwraca wszystkie akcje
     public List<Stock> getStocks() {
-        // TODO
+        return stocks;
     }
 }
