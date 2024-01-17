@@ -39,7 +39,7 @@ public class DataWriterTest {
     private Path testFilePath;
 
     @BeforeEach
-    void setUp() throws IOException {
+    void setUp()  {
         testFilePath = tempDir.resolve("test.json");
 
         stars.add(star1);

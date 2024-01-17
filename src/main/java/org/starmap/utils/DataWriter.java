@@ -23,7 +23,7 @@ public class DataWriter {
         }
 
         try (FileWriter fileWriter = new FileWriter(filePath)) {
-            fileWriter.write(starsArray.toString(2)); // The second parameter is the indentation level
+            fileWriter.write(starsArray.toString(2));
         } catch (IOException e) {
             throw new RuntimeException("Błąd podczas zapisywania do pliku: " + filePath, e);
         }
